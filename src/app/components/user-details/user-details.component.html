@@ -1,0 +1,22 @@
+<app-navbar [logged]=logged [privileges]=privileges></app-navbar>
+<div class="container pt-3">
+  <div class="card border-dark mb-3">
+    <div class="card-header bg-dark text-light">{{ user.user_type | uppercase }}</div>
+    <div class="card-body text-dark">
+      <h5 class="card-title">{{ user.nombre + ' ' + user.apellidos }}</h5>
+      <p class="card-text">{{ user.email }}</p>
+    </div>
+    <div class="card-footer bg-dark border-dark">
+      <div class="row">
+        <div class="col">
+          <a class="btn btn-light" routerLink="/users">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          </a>
+          <a class="btn btn-info" routerLink="edit">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

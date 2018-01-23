@@ -1,0 +1,27 @@
+<app-navbar [logged]=logged [privileges]=privileges></app-navbar>
+<div class="container pt-3">
+  <form #form="ngForm" (ngSubmit)="login()" novalidate=false>
+    <div class="card-header bg-dark text-light">Inicion de sesión</div>
+    <div class="card-body text-dark">
+      
+      <div class="form-group">
+        <label for="email" class=col-form-label>Email:</label>
+        <input class="form-control" type="email" name="email" [(ngModel)]="email" placeholder="Email" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="password" class=col-form-label>Contraseña:</label>
+        <input class="form-control" type="password" [(ngModel)]="password" name="password"  placeholder="Contraseña" required>
+      </div>
+    </div>
+    <div class="card-footer bg-dark border-dark">
+      <div class="row">
+        <div class="col">
+          <button [disabled]="!form.valid" type="submit" [class]="!form.valid ? 'btn btn-block btn-danger' : 'btn btn-block btn-success'">
+            Aceptar
+            <i [class]="!form.valid ? 'fa fa-times' : 'fa fa-check'" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
